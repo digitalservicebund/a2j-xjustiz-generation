@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:xoev-cl-3="http://xoev.de/schemata/genericode/3">
+   <Annotation>
+      <Description>
+         <xoev-cl-3:nameKurz>GDS.Intervall</xoev-cl-3:nameKurz>
+         <xoev-cl-3:beschreibung-codeliste>Codeliste für ein Intervall.</xoev-cl-3:beschreibung-codeliste>
+         <xoev-cl-3:herausgebernameKurz>AG IT-Standards</xoev-cl-3:herausgebernameKurz>
+         <xoev-cl-3:datumGueltigkeitAb>2023-10-31</xoev-cl-3:datumGueltigkeitAb>
+         <xoev-cl-3:versionCodelistenHandbuch>1.1</xoev-cl-3:versionCodelistenHandbuch>
+      </Description>
+   </Annotation>
+   <Identification>
+      <ShortName>gds.intervall</ShortName>
+      <LongName>GDS.Intervall</LongName>
+      <Version>2.0</Version>
+      <CanonicalUri>urn:xoev-de:xjustiz:codeliste:gds.intervall</CanonicalUri>
+      <CanonicalVersionUri>urn:xoev-de:xjustiz:codeliste:gds.intervall_2.0</CanonicalVersionUri>
+      <Agency>
+         <LongName>BLK-AG IT-Standards in der Justiz</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>code</ShortName>
+         <LongName>Schlüssel</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="wert" Use="required">
+         <ShortName>wert</ShortName>
+         <LongName>Wert</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="codeKey">
+         <Annotation>
+            <AppInfo>
+               <xoev-cl-3:empfohleneCodeSpalte/>
+            </AppInfo>
+         </Annotation>
+         <ShortName>codeKey</ShortName>
+         <ColumnRef Ref="code"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>001</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>einmalig</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>002</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>täglich</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>003</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>wöchentlich</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>004</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>monatlich</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>005</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>vierteljährlich</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>006</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>halbjährlich</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>007</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>jährlich</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

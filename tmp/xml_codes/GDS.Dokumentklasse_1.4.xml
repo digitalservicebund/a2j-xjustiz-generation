@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+             xmlns:xoev-cl-4="http://xoev.de/schemata/genericode/4"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <Annotation>
+      <Description>
+         <xoev-cl-4:shortName>GDS.Dokumentklasse</xoev-cl-4:shortName>
+         <xoev-cl-4:codelistDescription>Codeliste der verschiedenen Dokumentklassen.</xoev-cl-4:codelistDescription>
+         <xoev-cl-4:agencyShortName>AG-IT-Standards</xoev-cl-4:agencyShortName>
+         <xoev-cl-4:versionDescription>Codeliste der verschiedenen Dokumentklassen.</xoev-cl-4:versionDescription>
+         <xoev-cl-4:validFrom>2025-02-24</xoev-cl-4:validFrom>
+         <xoev-cl-4:versionHandbook>1.2</xoev-cl-4:versionHandbook>
+         <xoev-cl-4:changes>Entfernung des Wertes "Anlage" │ Entfernung der Spalte "Fachmodul" │ Erweiterung um die Spalte "Beschreibung" │ Erweiterung um den Wert "Gerichtsbescheid"</xoev-cl-4:changes>
+      </Description>
+   </Annotation>
+   <Identification>
+      <ShortName>gds.dokumentklasse</ShortName>
+      <LongName>GDS.Dokumentklasse</LongName>
+      <Version>1.4</Version>
+      <CanonicalUri>urn:xoev-de:xjustiz:codeliste:gds.dokumentklasse</CanonicalUri>
+      <CanonicalVersionUri>urn:xoev-de:xjustiz:codeliste:gds.dokumentklasse_1.4</CanonicalVersionUri>
+      <Agency>
+         <LongName>BLK-AG IT-Standards in der Justiz</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>code</ShortName>
+         <LongName>Schlüssel</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="wert" Use="required">
+         <ShortName>wert</ShortName>
+         <LongName>Wert</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="Beschreibung" Use="optional">
+         <ShortName>Beschreibung</ShortName>
+         <LongName>Beschreibung</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="codeKey">
+         <Annotation>
+            <AppInfo>
+               <xoev-cl-4:recommendedKeyColumn/>
+            </AppInfo>
+         </Annotation>
+         <ShortName>codeKey</ShortName>
+         <ColumnRef Ref="code"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>001</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Andere / Sonstige</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Dokument, auf das keine der anderen Dokumentenklassen zutrifft</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>003</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Klage / Antrag</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Schreiben an ein Gericht oder eine Staatsanwaltschaft, das eine Klage oder einen Antrag (auch Einlegung eines Rechtsmittels) enthält.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>006</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Urteil</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Gerichtliche Entscheidung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>007</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Beschluss</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Gerichtliche Entscheidung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>008</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Verfügung</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Gerichtlich oder behördlich getroffene Anordnung zur Prozess- oder Verfahrensleitung </SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>009</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Vermerk</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Behördeninterne Verschriftlichung von Informationen</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>010</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Protokoll</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Niederschrift über die wesentlichen Vorgänge eines gerichtlichen oder staatsanwaltschaftlichen Termins</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>011</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Fehlblatt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Nachweis über die Entfernung eines Schriftstücks aus der Akte</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>012</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Zustellungsdokument</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Dokument, das den Erhalt eines gerichtlichen oder behördlichen Schriftstücks nachweist. </SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>013</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Gutachten</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Schriftliche Ausarbeitung eines Sachverständigen </SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>014</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Technische Information</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Ein vom System erzeugtes Dokument, das Informationen zu technischen Vorgängen gibt, z. B. Signaturprüfprotokoll </SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>015</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Schreiben</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Schriftstück, das weder eine Klage / Antrag, einen Antrag (Behörde), noch einen Einspruch / Widerspruch darstellt. </SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>016</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Antrag (Behörde)</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Schreiben an eine Behörde, das einen Antrag enthält</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>017</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Bescheid</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>von Amts wegen oder auf Antrag getroffene behördliche Entscheidung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>018</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Einspruch / Widerspruch (Behörde)</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Ein gegen eine behördliche Entscheidung eingelegter Rechtsbehelf</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>019</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Einspruchs- / Widerspruchsbescheid</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Eine auf einen Rechtsbehelf getroffene behördliche Entscheidung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>020</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Kostendokument</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Dokument mit Kostenrelevanz </SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>021</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Gerichtsbescheid</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Gerichtliche Entscheidung (§§ 105 SGG, 84 VwGO und 90a FGO)</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

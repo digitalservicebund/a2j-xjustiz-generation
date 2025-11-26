@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+             xmlns:xoev-cl-4="http://xoev.de/schemata/genericode/4"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <Annotation>
+      <Description>
+         <xoev-cl-4:shortName>GDS.Entscheidungsart</xoev-cl-4:shortName>
+         <xoev-cl-4:codelistDescription>Codeliste der verschiedenen Entscheidungsarten.</xoev-cl-4:codelistDescription>
+         <xoev-cl-4:agencyShortName>AG IT-Standards</xoev-cl-4:agencyShortName>
+         <xoev-cl-4:validFrom>2025-04-30</xoev-cl-4:validFrom>
+         <xoev-cl-4:versionHandbook>1.2</xoev-cl-4:versionHandbook>
+      </Description>
+   </Annotation>
+   <Identification>
+      <ShortName>gds.entscheidungsart</ShortName>
+      <LongName>GDS.Entscheidungsart</LongName>
+      <Version>1.0</Version>
+      <CanonicalUri>urn:xoev-de:xjustiz:codeliste:gds.entscheidungsart</CanonicalUri>
+      <CanonicalVersionUri>urn:xoev-de:xjustiz:codeliste:gds.entscheidungsart_1.0</CanonicalVersionUri>
+      <Agency>
+         <LongName>BLK-AG IT-Standards in der Justiz</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>code</ShortName>
+         <LongName>Schlüssel</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="wert" Use="required">
+         <ShortName>wert</ShortName>
+         <LongName>Wert</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="codeKey">
+         <Annotation>
+            <AppInfo>
+               <xoev-cl-4:recommendedKeyColumn/>
+            </AppInfo>
+         </Annotation>
+         <ShortName>codeKey</ShortName>
+         <ColumnRef Ref="code"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>001</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Beschluss</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>002</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Urteil</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>003</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Strafbefehl</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>004</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Bescheid</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>005</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Verfügung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>006</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Vergleich</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

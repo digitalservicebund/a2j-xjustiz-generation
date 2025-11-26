@@ -1,0 +1,1543 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:xoev-cl-3="http://xoev.de/schemata/genericode/3">
+   <Annotation>
+      <Description>
+         <xoev-cl-3:nameKurz>GDS.Sprachen</xoev-cl-3:nameKurz>
+         <xoev-cl-3:beschreibung-codeliste>Codeliste der verschiedenen Sprachen basierend auf der ISO-639-1 alpha2-Liste und den beiden zusätzlichen Werten 'sonstige' und 'nicht definierbar'.</xoev-cl-3:beschreibung-codeliste>
+         <xoev-cl-3:herausgebernameKurz>AG IT-Standards</xoev-cl-3:herausgebernameKurz>
+         <xoev-cl-3:datumGueltigkeitAb>2023-10-31</xoev-cl-3:datumGueltigkeitAb>
+         <xoev-cl-3:versionCodelistenHandbuch>1.1</xoev-cl-3:versionCodelistenHandbuch>
+      </Description>
+   </Annotation>
+   <Identification>
+      <ShortName>gds.sprachen</ShortName>
+      <LongName>GDS.Sprachen</LongName>
+      <Version>2.1</Version>
+      <CanonicalUri>urn:xoev-de:xjustiz:codeliste:gds.sprachen</CanonicalUri>
+      <CanonicalVersionUri>urn:xoev-de:xjustiz:codeliste:gds.sprachen_2.1</CanonicalVersionUri>
+      <Agency>
+         <LongName>BLK-AG IT-Standards in der Justiz</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>code</ShortName>
+         <LongName>Schlüssel</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="wert" Use="required">
+         <ShortName>wert</ShortName>
+         <LongName>Wert</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="codeKey">
+         <Annotation>
+            <AppInfo>
+               <xoev-cl-3:empfohleneCodeSpalte/>
+            </AppInfo>
+         </Annotation>
+         <ShortName>codeKey</ShortName>
+         <ColumnRef Ref="code"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>00</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>sonstige</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>01</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nicht definierbar</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>aa</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Danakil-Sprache</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ab</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Abchasisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ae</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Avestisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>af</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Afrikaans</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ak</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Akan-Sprache</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>am</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Amharisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>an</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Aragonesisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ar</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Arabisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>as</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Assamesisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>av</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Awarisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ay</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Aymará-Sprache</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>az</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Aserbeidschanisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ba</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Baschkirisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>be</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Weißrussisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>bg</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Bulgarisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>bh</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Bihari (Andere)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>bi</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Beach-la-mar</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>bm</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Bambara-Sprache</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>bn</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Bengali</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>bo</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Tibetisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>br</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Bretonisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>bs</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Bosnisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ca</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Katalanisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ce</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Tschetschenisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ch</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Chamorro-Sprache</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>cn</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Montenegrinisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>co</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Korsisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>cr</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Cree-Sprache</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>cs</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Tschechisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>cu</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Kirchenslawisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>cv</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Tschuwaschisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>cy</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Walisisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>da</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Dänisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>de</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Deutsch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>dv</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Maledivisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>dz</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Dzongkha</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ee</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Ewe-Sprache</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>el</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Griechisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>en</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Englisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>eo</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Esperanto</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>es</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Spanisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>et</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Estnisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>eu</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Baskisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>fa</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Persisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ff</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Ful</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>fi</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Finnisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>fj</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Fidschi-Sprache</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>fo</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Färöisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>fr</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Französisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>fy</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Friesisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ga</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Irisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>gd</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Gälisch-Schottisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>gl</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Galicisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>gn</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Guaraní-Sprache</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>gu</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Gujarati-Sprache</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>gv</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Manx</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ha</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Haussa-Sprache</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>he</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Hebräisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>hi</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Hindi</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ho</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Hiri-Motu</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>hr</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Kroatisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ht</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Haïtien (Haiti-Kreolisch)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>hu</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Ungarisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>hy</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Armenisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>hz</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Herero-Sprache</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ia</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Interlingua</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>id</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Bahasa Indonesia</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ie</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Interlingue</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ig</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Ibo-Sprache</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ii</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Lalo-Sprache</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ik</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Inupik</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>io</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Ido</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>is</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Isländisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>it</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Italienisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>iu</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Inuktitut</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ja</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Japanisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>jv</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Javanisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ka</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Georgisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>kg</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Kongo-Sprache</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ki</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Kikuyu-Sprache</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>kj</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Kwanyama-Sprache</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>kk</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Kasachisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>kl</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Grönländisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>km</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Kambodschanisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>kn</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Kannada</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ko</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Koreanisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>kr</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Kanuri-Sprache</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ks</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Kaschmiri</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ku</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Kurdisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>kv</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Komi-Sprache</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>kw</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Kornisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ky</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Kirgisisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>la</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Latein</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>lb</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Luxemburgisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>lg</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Ganda-Sprache</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>li</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Limburgisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ln</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Lingala</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>lo</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Laotisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>lt</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Litauisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>lu</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Luba-Katanga-Sprache</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>lv</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Lettisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>mg</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Malagassi-Sprache</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>mh</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Marschallesisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>mi</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Maori-Sprache</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>mk</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Makedonisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ml</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Malayalam</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>mn</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Mongolisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>mr</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Marathi</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ms</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Malaiisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>mt</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Maltesisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>my</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Birmanisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>na</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Nauruanisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>nb</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Bokmål</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>nd</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Ndebele-Sprache (Simbabwe)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ne</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Nepali</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ng</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Ndonga</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>nl</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Niederländisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>nn</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Nynorsk</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>no</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Norwegisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>nr</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Ndebele-Sprache (Transvaal)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>nv</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Navajo-Sprache</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ny</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Nyanja-Sprache</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>oc</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Okzitanisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>oj</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Ojibwa-Sprache</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>om</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Galla-Sprache</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>or</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Oriya-Sprache</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>os</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Ossetisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>pa</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Pandschabi-Sprache</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>pi</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Pali</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>pl</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Polnisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ps</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Paschtu</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>pt</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Portugiesisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>qu</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Quechua-Sprache</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>rm</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Rätoromanisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>rn</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Rundi-Sprache</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ro</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Rumänisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ru</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Russisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>rw</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Rwanda-Sprache</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>sa</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Sanskrit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>sc</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Sardisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>sd</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Sindhi-Sprache</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>se</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Nordsaamisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>sg</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Sango-Sprache</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>si</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Singhalesisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>sk</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Slowakisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>sl</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Slowenisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>sm</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Samoanisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>sn</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Schona-Sprache</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>so</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Somali</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>sq</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Albanisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>sr</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Serbisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ss</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Swasi-Sprache</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>st</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Süd-Sotho-Sprache</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>su</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Sundanesisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>sv</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Schwedisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>sw</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Swahili</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ta</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Tamil</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>te</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Telugu-Sprache</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>tg</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Tadschikisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>th</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Thailändisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ti</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Tigrinja-Sprache</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>tk</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Turkmenisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>tl</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Tagalog</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>tn</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Tswana-Sprache</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>to</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Tongaisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>tr</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Türkisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ts</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Tsonga-Sprache</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>tt</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Tatarisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>tw</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Twi-Sprache</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ty</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Tahitisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ug</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Uigurisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>uk</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Ukrainisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ur</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Urdu</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>uz</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Usbekisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>ve</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Venda-Sprache</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>vi</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Vietnamesisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>vo</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Volapük</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>wa</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Wallonisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>wo</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Wolof-Sprache</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>xh</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Xhosa-Sprache</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>yi</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Jiddisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>yo</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Yoruba-Sprache</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>za</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Zhuang</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>zh</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Chinesisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>zu</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Zulu-Sprache</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>
