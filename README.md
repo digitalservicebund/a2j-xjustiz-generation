@@ -31,7 +31,7 @@ Run the script without validating the example xml and print the output
 ./gradlew bootRun
 ```
 
-Run the script with enforcing the Schema to let the validation fail
+Run the script to check if it is a valid xjusitz message
 ```
 ./gradlew bootRun --args='--validate'
 ```
