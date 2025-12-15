@@ -29,10 +29,25 @@
   "telefonnummer": "1010101010",
   "iban": "DE68500123456789000000",
   "kontoinhaber": "Test-Test Müller",
-  "isWeiterePersonen": "no",
+  "isWeiterePersonen": "yes",
+  "weiterePersonen": [
+    {
+      "anrede": "frau",
+      "title": "",
+      "vorname": "Erika",
+      "nachname": "Mustermann"
+    },
+    {
+      "anrede": "herr",
+      "title": "",
+      "vorname": "Max",
+      "nachname": "Mustermann"
+    }
+  ],
   "fluggesellschaftStrasseHausnummer": "Musterstr. 30",
   "fluggesellschaftPostleitzahl": "10970",
   "fluggesellschaftOrt": "Berlin",
   "fluggesellschaftLand": "Deutschland",
-  "courtName": "ZZ Test-Baden-Württemberg"
+  "courtName": "ZZ Test-Baden-Württemberg",
+  "antrag": "Die beklagte Partei wird verurteilt, an die klagende Partei 750 € nebst Zinsen in Höhe von 5Prozentpunkten über dem jeweiligen Basiszinssatz seit Rechtshängigkeit zu zahlen."
 }

@@ -1,7 +1,8 @@
 package de.digitalservice.service;
 
-import de.digitalservice.model.user.UserData;
+import de.digitalservice.model.fgrUser.UserData;
 import de.xjustiz.CodeGDSGerichteTyp3;
+import de.xjustiz.TypeGDSHerstellerinformation;
 import de.xjustiz.TypeGDSKommunikationspartner;
 import de.xjustiz.TypeGDSNachrichtenkopf;
 
@@ -27,12 +28,15 @@ public class NachrichtenkopfGenerator {
         this.nachrichtenkopf = new TypeGDSNachrichtenkopf();
     }
 
-    public TypeGDSNachrichtenkopf createNachrichtenkopf(UserData userData, String companyName)
+    public TypeGDSNachrichtenkopf createNachrichtenkopf(UserData userData, String companyName, String productName,
+            String manufacturer, String version)
             throws DatatypeConfigurationException {
 
         nachrichtenkopf.setErstellungszeitpunkt(now());
         nachrichtenkopf.setAbsender(createAbsender(companyName));
         nachrichtenkopf.setEmpfaenger(createEmpfaenger(userData.getCourtName()));
+        nachrichtenkopf.setHerstellerinformation(createHerstellerinformation(productName, manufacturer, version));
+
         nachrichtenkopf.setXjustizVersion(XJUSTIZ_VERSION);
 
         return nachrichtenkopf;
@@ -60,6 +64,10 @@ public class NachrichtenkopfGenerator {
         var empfaenger = new TypeGDSNachrichtenkopf.Empfaenger();
         var partner = new TypeGDSKommunikationspartner();
         var auswahl = new TypeGDSKommunikationspartner.AuswahlKommunikationspartner();
+        var auswahlAktenzeichen = new TypeGDSNachrichtenkopf.Empfaenger.AuswahlAktenzeichen();
+        auswahlAktenzeichen.setAktenzeichenUnbekannt(true);
+
+        empfaenger.setAuswahlAktenzeichen(auswahlAktenzeichen);
 
         auswahl.setGericht(createCodeFromValue(
                 CodeGDSGerichteTyp3.class,
@@ -70,5 +78,14 @@ public class NachrichtenkopfGenerator {
         empfaenger.setInformationen(partner);
 
         return empfaenger;
+    }
+
+    private TypeGDSHerstellerinformation createHerstellerinformation(String productName, String manufacturer,
+            String version) {
+        var herstellerinformation = new TypeGDSHerstellerinformation();
+        herstellerinformation.setNameDesProdukts(productName);
+        herstellerinformation.setHerstellerDesProdukts(manufacturer);
+        herstellerinformation.setVersion(version);
+        return herstellerinformation;
     }
 }

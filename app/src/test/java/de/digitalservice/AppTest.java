@@ -5,8 +5,6 @@ package de.digitalservice;
 
 import org.junit.jupiter.api.Test;
 
-import de.digitalservice.App;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {

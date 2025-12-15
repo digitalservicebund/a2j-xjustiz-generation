@@ -1,8 +1,9 @@
 package de.digitalservice;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import de.digitalservice.model.user.UserData;
+import de.digitalservice.model.fgrUser.UserData;
 import de.digitalservice.service.NachrichtenkopfGenerator;
+import de.digitalservice.service.claims.FgrClaimGenerator;
 import de.xjustiz.NachrichtGdsBasisnachricht0005006;
 import jakarta.xml.bind.*;
 import org.springframework.boot.ApplicationArguments;
@@ -44,7 +45,12 @@ public class App implements ApplicationRunner {
 
         NachrichtGdsBasisnachricht0005006 nachricht = new NachrichtGdsBasisnachricht0005006();
         nachricht.setNachrichtenkopf(
-                new NachrichtenkopfGenerator().createNachrichtenkopf(userData, "DigitalService GmbH"));
+                new NachrichtenkopfGenerator().createNachrichtenkopf(userData, "DigitalService GmbH", "FGR claim",
+                        "DigitalService GmbH", "1.0.0"));
+
+        var fgrClaimGenerator = new FgrClaimGenerator();
+        nachricht.setGrunddaten(fgrClaimGenerator.generatePlaintiffAndCedentGrunddaten(userData));
+        nachricht.setGrunddaten(fgrClaimGenerator.generateDefendantGrunddaten(userData));
 
         try {
             JAXBContext jc = JAXBContext.newInstance(NachrichtGdsBasisnachricht0005006.class);

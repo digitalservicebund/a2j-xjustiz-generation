@@ -1,5 +1,10 @@
-package de.digitalservice.model.user;
+package de.digitalservice.model.fgrUser;
 
+import java.util.List;
+
+import de.digitalservice.model.common.Anrede;
+import de.digitalservice.model.common.Title;
+import de.digitalservice.model.common.YesNoAnswer;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
@@ -77,6 +82,8 @@ public class UserData {
     // court data
     private String courtName;
 
+    private String antrag;
+
     // court procedure
 
     private YesNoAnswer hasZeugen;
@@ -86,4 +93,5 @@ public class UserData {
 
     // weitere Personen
     private YesNoAnswer isWeiterePersonen;
+    private List<WeiterePerson> weiterePersonen;
 }

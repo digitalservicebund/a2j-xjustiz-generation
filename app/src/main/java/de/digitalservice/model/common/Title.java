@@ -1,4 +1,4 @@
-package de.digitalservice.model.user;
+package de.digitalservice.model.common;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
