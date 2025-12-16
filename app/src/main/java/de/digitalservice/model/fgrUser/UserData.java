@@ -1,5 +1,6 @@
 package de.digitalservice.model.fgrUser;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import de.digitalservice.model.common.Anrede;
@@ -81,11 +82,13 @@ public class UserData {
 
     // court data
     private String courtName;
-
     private String antrag;
+    private Double streitwert;
+    private String anspruchsgegenstand;
+    private String nebenantragZinsen;
+    private BigDecimal zinssatz;
 
     // court procedure
-
     private YesNoAnswer hasZeugen;
     private YesNoAnswer versaeumnisurteil;
     private Videoverhandlung videoverhandlung;

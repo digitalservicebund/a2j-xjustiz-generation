@@ -3,121 +3,185 @@ package de.digitalservice.service.claims;
 import java.math.BigInteger;
 import java.util.List;
 
+import de.digitalservice.model.common.Title;
 import de.digitalservice.model.fgrUser.UserData;
 import de.digitalservice.model.fgrUser.WeiterePerson;
 import de.digitalservice.service.GrunddatenGenerator;
+import de.digitalservice.service.utils.RoleNumberRegistry;
+import de.digitalservice.service.utils.XmlDateConverter;
+import de.xjustiz.CodeGDSZinsmethodeTyp3;
 import de.xjustiz.NachrichtKlaverKlageverfahren3500001;
 import de.xjustiz.TypeGDSGrunddaten;
+import de.xjustiz.TypeGDSZinsen;
 import de.xjustiz.TypeKLAVERAntrag;
-import de.xjustiz.TypeKLAVERAnspruch;
+
+import static de.digitalservice.codes.CodeUtils.createCodeFromValue;
 
 public class FgrClaimGenerator {
 
-    private static final BigInteger FIRST_ANSPRUCH_NUMMER = BigInteger.ONE;
+        private static final BigInteger ANSPRUCHSNUMMER_HAUPTANTRAG = BigInteger.ZERO;
+        private static final BigInteger ANSPRUCHSNUMMER_NEBENANTRAG_ZINSEN = BigInteger.ONE;
 
-    private static final String ROLE_PLAINTIFF = "Kläger(in)";
-    private static final String ROLE_CEDENT = "Zedent(in)";
-    private static final String ROLE_DEFENDANT = "Beklagte(r)";
+        private static final String ROLE_PLAINTIFF = "Kläger(in)";
+        private static final String ROLE_CEDENT = "Zedent(in)";
+        private static final String ROLE_DEFENDANT = "Beklagte(r)";
+        private static final String ZINSMETHODE = "jährlicher Zinssatz Über Basiszins";
+        private static final String CODE_ZINSMETHODE_PATH = "codes/GDS.Zinsmethode_1.0.xml";
 
-    private final NachrichtKlaverKlageverfahren3500001 klage;
-    private final GrunddatenGenerator grunddatenGenerator;
+        private final NachrichtKlaverKlageverfahren3500001 klage;
+        private final GrunddatenGenerator grunddatenGenerator;
+        private final RoleNumberRegistry roleNumbers;
 
-    public FgrClaimGenerator() {
-        this.klage = new NachrichtKlaverKlageverfahren3500001();
-        this.grunddatenGenerator = new GrunddatenGenerator();
-    }
+        private int rollennummerPlaintiff;
+        private int rollennummerDefendant;
 
-    public NachrichtKlaverKlageverfahren3500001 createAntrag(UserData userData) {
-
-        var inhaltsdaten = new NachrichtKlaverKlageverfahren3500001.Inhaltsdaten();
-
-        var antrag = new TypeKLAVERAntrag();
-        var sachantraege = new TypeKLAVERAntrag.Sachantraege();
-
-        var anspruch = new TypeKLAVERAnspruch();
-        anspruch.setFortlaufendeNummer(FIRST_ANSPRUCH_NUMMER);
-
-        sachantraege.setInhalt(userData.getAntrag());
-
-        antrag.setSachantraege(sachantraege);
-        inhaltsdaten.setAntraege(antrag);
-        klage.setInhaltsdaten(inhaltsdaten);
-
-        return klage;
-    }
-
-    public TypeGDSGrunddaten generatePlaintiffAndCedentGrunddaten(UserData userData) {
-
-        // Kläger
-        var plaintiff = grunddatenGenerator.createNatuerlichePerson(
-                userData.getVorname(),
-                userData.getNachname(),
-                // TODO: use title when available
-                null,
-                userData.getStrasseHausnummer(),
-                userData.getPlz(),
-                userData.getOrt(),
-                userData.getLand());
-
-        grunddatenGenerator.addGrunddaten(
-                grunddatenGenerator.createBeteiligungForNatuerlichePerson(
-                        1,
-                        ROLE_PLAINTIFF,
-                        plaintiff));
-
-        // Zedenten
-        List<WeiterePerson> weiterePersonen = userData.getWeiterePersonen();
-        if (weiterePersonen == null || weiterePersonen.isEmpty()) {
-            return grunddatenGenerator.getGrunddaten();
+        public FgrClaimGenerator() {
+                this.klage = new NachrichtKlaverKlageverfahren3500001();
+                this.grunddatenGenerator = new GrunddatenGenerator();
+                this.roleNumbers = new RoleNumberRegistry();
         }
 
-        for (int i = 0; i < weiterePersonen.size(); i++) {
-            WeiterePerson person = weiterePersonen.get(i);
+        // ---------------------------------------------------------------------
+        // Antrag
+        // ---------------------------------------------------------------------
 
-            var natuerlichePerson = grunddatenGenerator.createNatuerlichePerson(
-                    person.getVorname(),
-                    person.getNachname(),
-                    // TODO: use title when available
-                    null,
-                    person.getStrasseHausnummer(),
-                    person.getPlz(),
-                    person.getOrt(),
-                    person.getLand());
+        public NachrichtKlaverKlageverfahren3500001 createAntrag(UserData userData) {
 
-            grunddatenGenerator.addGrunddaten(
-                    grunddatenGenerator.createBeteiligungForNatuerlichePerson(
-                            i + 2,
-                            ROLE_CEDENT,
-                            natuerlichePerson));
+                final var inhaltsdaten = new NachrichtKlaverKlageverfahren3500001.Inhaltsdaten();
+                final var antrag = new TypeKLAVERAntrag();
+                final var sachantraege = new TypeKLAVERAntrag.Sachantraege();
+
+                sachantraege.setInhalt(userData.getAntrag());
+
+                sachantraege.getAnspruch().add(
+                                new AnspruchBuilder()
+                                                .fortlaufendeNummer(ANSPRUCHSNUMMER_HAUPTANTRAG)
+                                                .anspruchsart("Zahlung")
+                                                .anspruchssteller(rollennummerPlaintiff)
+                                                .anspruchsgegner(rollennummerDefendant)
+                                                .anspruchsgegenstand(userData.getAnspruchsgegenstand())
+                                                .build());
+
+                antrag.setSachantraege(sachantraege);
+
+                // Nebenantrag Zinsen
+                // TODO add if clause to only add if user provided data
+                antrag.setNebenantraegeZinsen(createNebenantragZinsen(userData));
+
+                inhaltsdaten.setAntraege(antrag);
+                klage.setInhaltsdaten(inhaltsdaten);
+
+                return klage;
         }
 
-        return grunddatenGenerator.getGrunddaten();
-    }
+        private TypeKLAVERAntrag.NebenantraegeZinsen createNebenantragZinsen(UserData userData) {
 
-    public TypeGDSGrunddaten generateDefendantGrunddaten(UserData userData) {
+                final var nebenantragZinsen = new TypeKLAVERAntrag.NebenantraegeZinsen();
+                final var zinsanspruch = new TypeKLAVERAntrag.NebenantraegeZinsen.Zinsanspruch();
 
-        var defendant = grunddatenGenerator.createOrganisation(
-                userData.getFluggesellschaft(),
-                userData.getFluggesellschaftStrasseHausnummer(),
-                userData.getFluggesellschaftPostleitzahl(),
-                userData.getFluggesellschaftOrt(),
-                userData.getFluggesellschaftLand());
+                zinsanspruch.setFortlaufendeNummer(ANSPRUCHSNUMMER_NEBENANTRAG_ZINSEN);
+                zinsanspruch.setRefFortlaufendeNummer(ANSPRUCHSNUMMER_HAUPTANTRAG);
 
-        int beteiligtennummer = grunddatenGenerator.getGrunddaten()
-                .getVerfahrensdaten()
-                .getBeteiligung()
-                .size() + 1;
+                final var zinsen = new TypeGDSZinsen();
+                // TODO check if original departure date is the accurate field for zinsbeginn
+                // (from a legal perspective)
+                zinsen.setZinsbeginn(
+                                XmlDateConverter.toXmlGregorianCalendar(
+                                                userData.getDirektAbflugsDatum(), null));
 
-        grunddatenGenerator.addGrunddaten(
-                grunddatenGenerator.createBeteiligungForOrganisation(
-                        beteiligtennummer,
-                        ROLE_DEFENDANT,
-                        defendant));
+                zinsen.setZinssatz(userData.getZinssatz());
+                zinsen.setZinsmethode(
+                                createCodeFromValue(
+                                                CodeGDSZinsmethodeTyp3.class,
+                                                ZINSMETHODE,
+                                                CODE_ZINSMETHODE_PATH));
 
-        return grunddatenGenerator.getGrunddaten();
-    }
+                zinsanspruch.getZinsen().add(zinsen);
+                nebenantragZinsen.getZinsanspruch().add(zinsanspruch);
+                nebenantragZinsen.setInhalt(userData.getNebenantragZinsen());
 
-    public GrunddatenGenerator getGrunddatenGenerator() {
-        return grunddatenGenerator;
-    }
+                return nebenantragZinsen;
+        }
+
+        // ---------------------------------------------------------------------
+        // Grunddaten
+        // ---------------------------------------------------------------------
+
+        public TypeGDSGrunddaten generatePlaintiffAndCedentGrunddaten(UserData userData) {
+
+                // Kläger
+                rollennummerPlaintiff = roleNumbers.next();
+
+                final var plaintiff = grunddatenGenerator.createNatuerlichePerson(
+                                userData.getVorname(),
+                                userData.getNachname(),
+                                titleOrNull(userData.getTitle()),
+                                userData.getStrasseHausnummer(),
+                                userData.getPlz(),
+                                userData.getOrt(),
+                                userData.getLand());
+
+                grunddatenGenerator.addGrunddaten(
+                                grunddatenGenerator.createBeteiligungForNatuerlichePerson(
+                                                rollennummerPlaintiff,
+                                                ROLE_PLAINTIFF,
+                                                plaintiff));
+
+                // Zedenten
+                List<WeiterePerson> weiterePersonen = userData.getWeiterePersonen();
+                if (weiterePersonen == null || weiterePersonen.isEmpty()) {
+                        return grunddatenGenerator.getGrunddaten();
+                }
+
+                for (WeiterePerson person : weiterePersonen) {
+
+                        int rollennummerZedent = roleNumbers.next();
+
+                        final var natuerlichePerson = grunddatenGenerator.createNatuerlichePerson(
+                                        person.getVorname(),
+                                        person.getNachname(),
+                                        titleOrNull(person.getTitle()),
+                                        person.getStrasseHausnummer(),
+                                        person.getPlz(),
+                                        person.getOrt(),
+                                        person.getLand());
+
+                        grunddatenGenerator.addGrunddaten(
+                                        grunddatenGenerator.createBeteiligungForNatuerlichePerson(
+                                                        rollennummerZedent,
+                                                        ROLE_CEDENT,
+                                                        natuerlichePerson));
+                }
+
+                return grunddatenGenerator.getGrunddaten();
+        }
+
+        public TypeGDSGrunddaten generateDefendantGrunddaten(UserData userData) {
+
+                rollennummerDefendant = roleNumbers.next();
+
+                final var defendant = grunddatenGenerator.createOrganisation(
+                                // TODO: get full airline name (e.g. currently LH for Lufthansa)
+                                userData.getFluggesellschaft(),
+                                userData.getFluggesellschaftStrasseHausnummer(),
+                                userData.getFluggesellschaftPostleitzahl(),
+                                userData.getFluggesellschaftOrt(),
+                                userData.getFluggesellschaftLand());
+
+                grunddatenGenerator.addGrunddaten(
+                                grunddatenGenerator.createBeteiligungForOrganisation(
+                                                rollennummerDefendant,
+                                                ROLE_DEFENDANT,
+                                                defendant));
+
+                return grunddatenGenerator.getGrunddaten();
+        }
+
+        private static String titleOrNull(Title title) {
+                return title != null ? title.getValue() : null;
+        }
+
+        public GrunddatenGenerator getGrunddatenGenerator() {
+                return grunddatenGenerator;
+        }
 }

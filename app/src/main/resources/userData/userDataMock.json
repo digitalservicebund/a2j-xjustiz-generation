@@ -8,7 +8,12 @@
   "buchungsNummer": "AB6303",
   "direktAbflugsDatum": "10.10.2023",
   "direktAbflugsZeit": "09:00",
-  "zwischenstoppAnzahl": "no",
+  "zwischenstoppAnzahl": "threeStop",
+
+  "ersterZwischenstopp": "BER",
+  "zweiterZwischenstopp": "NUE",
+  "dritterZwischenstopp": "FRA",
+
   "direktAnkunftsDatum": "10.10.2023",
   "direktAnkunftsZeit": "10:00",
   "endAirport": "JFK",
@@ -48,6 +53,11 @@
   "fluggesellschaftPostleitzahl": "10970",
   "fluggesellschaftOrt": "Berlin",
   "fluggesellschaftLand": "Deutschland",
+
+  "streitwert": "450",
   "courtName": "ZZ Test-Baden-Württemberg",
-  "antrag": "Die beklagte Partei wird verurteilt, an die klagende Partei 750 € nebst Zinsen in Höhe von 5Prozentpunkten über dem jeweiligen Basiszinssatz seit Rechtshängigkeit zu zahlen."
+  "anspruchsgegenstand": "Ausgleichszahlung nach der Fluggastrechteverordnung (EG) 261/2004",
+  "antrag": "Die beklagte Partei wird verurteilt, an die klagende Partei 750 € zu zahlen.",
+  "zinssatz": "5.0",
+  "nebenantragZinsen": "Die beklagte Partei wird verurteilt, Zinsen in Höhe von 5 Prozentpunkten über dem jeweiligen Basiszinssatz seit Rechtshängigkeit zu zahlen."
 }

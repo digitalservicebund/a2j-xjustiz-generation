@@ -76,12 +76,12 @@ public class GrunddatenGenerator {
         beteiligter.setBeteiligtennummer(String.valueOf(beteiligtennummer));
 
         beteiligung.setBeteiligter(beteiligter);
-        beteiligung.getRolle().add(createRolle(rollenbezeichnungValue));
+        beteiligung.getRolle().add(createRolle(rollenbezeichnungValue, String.valueOf(beteiligtennummer)));
 
         return beteiligung;
     }
 
-    private TypeGDSBeteiligung.Rolle createRolle(String rollenbezeichnungValue) {
+    private TypeGDSBeteiligung.Rolle createRolle(String rollenbezeichnungValue, String rollennummer) {
         final TypeGDSBeteiligung.Rolle rolle = new TypeGDSBeteiligung.Rolle();
 
         rolle.setRollenbezeichnung(
@@ -89,6 +89,7 @@ public class GrunddatenGenerator {
                         CodeGDSRollenbezeichnungTyp3.class,
                         rollenbezeichnungValue,
                         ROLE_CODELIST_PATH));
+        rolle.setRollennummer(rollennummer);
 
         return rolle;
     }
