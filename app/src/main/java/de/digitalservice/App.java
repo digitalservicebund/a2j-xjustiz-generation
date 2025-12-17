@@ -4,7 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import de.digitalservice.model.fgrUser.UserData;
 import de.digitalservice.service.NachrichtenkopfGenerator;
 import de.digitalservice.service.claims.FgrClaimGenerator;
-import de.xjustiz.NachrichtGdsBasisnachricht0005006;
+import de.xjustiz.NachrichtKlaverKlageverfahren3500001;
 import jakarta.xml.bind.*;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -43,7 +43,7 @@ public class App implements ApplicationRunner {
             return;
         }
 
-        NachrichtGdsBasisnachricht0005006 nachricht = new NachrichtGdsBasisnachricht0005006();
+        var nachricht = new NachrichtKlaverKlageverfahren3500001();
         nachricht.setNachrichtenkopf(
                 new NachrichtenkopfGenerator().createNachrichtenkopf(userData, "DigitalService GmbH", "FGR claim",
                         "DigitalService GmbH", "1.0.0"));
@@ -51,9 +51,10 @@ public class App implements ApplicationRunner {
         var fgrClaimGenerator = new FgrClaimGenerator();
         nachricht.setGrunddaten(fgrClaimGenerator.generatePlaintiffAndCedentGrunddaten(userData));
         nachricht.setGrunddaten(fgrClaimGenerator.generateDefendantGrunddaten(userData));
+        nachricht.setInhaltsdaten(fgrClaimGenerator.createClaim(userData));
 
         try {
-            JAXBContext jc = JAXBContext.newInstance(NachrichtGdsBasisnachricht0005006.class);
+            JAXBContext jc = JAXBContext.newInstance(NachrichtKlaverKlageverfahren3500001.class);
             Marshaller marshaller = jc.createMarshaller();
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 

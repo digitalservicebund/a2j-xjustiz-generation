@@ -10,7 +10,7 @@ import de.xjustiz.TypeKLAVERAnspruch;
 
 public class AnspruchBuilder {
 
-    private static final String CODE_ANSPRUCH_PATH = "codes/KLAVER.Anspruchsart_3.6.xml";
+    private static final String CODE_ANSPRUCH_PATH = "codes/KLAVER.Anspruchsart_1.0.xml";
 
     private final TypeKLAVERAnspruch anspruch = new TypeKLAVERAnspruch();
 

@@ -80,7 +80,7 @@ public class UserData {
     private String iban;
     private String kontoinhaber;
 
-    // court data
+    // court data (non existing on fgrUser yet)
     private String courtName;
     private String antrag;
     private Double streitwert;
@@ -88,11 +88,19 @@ public class UserData {
     private String nebenantragZinsen;
     private BigDecimal zinssatz;
 
+    // betroffener Flug (non existing on fgrUser yet)
+    private String betroffenerFlugFlugnummer;
+    private String betroffenerFlugAbflugFlughafen;
+    private String betroffenerFlugAnkunftFlughafen;
+
     // court procedure
     private YesNoAnswer hasZeugen;
     private YesNoAnswer versaeumnisurteil;
     private Videoverhandlung videoverhandlung;
     private YesNoAnswer prozesszinsen;
+
+    // anspruchshoehe (non existing on fgrUser yet)
+    private Distance distance;
 
     // weitere Personen
     private YesNoAnswer isWeiterePersonen;

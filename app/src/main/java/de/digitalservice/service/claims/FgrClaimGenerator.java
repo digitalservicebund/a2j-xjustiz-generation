@@ -12,6 +12,7 @@ import de.digitalservice.service.utils.XmlDateConverter;
 import de.xjustiz.CodeGDSZinsmethodeTyp3;
 import de.xjustiz.NachrichtKlaverKlageverfahren3500001;
 import de.xjustiz.TypeGDSGrunddaten;
+import de.xjustiz.TypeGDSRefRollennummer;
 import de.xjustiz.TypeGDSZinsen;
 import de.xjustiz.TypeKLAVERAntrag;
 
@@ -19,8 +20,8 @@ import static de.digitalservice.codes.CodeUtils.createCodeFromValue;
 
 public class FgrClaimGenerator {
 
-        private static final BigInteger ANSPRUCHSNUMMER_HAUPTANTRAG = BigInteger.ZERO;
-        private static final BigInteger ANSPRUCHSNUMMER_NEBENANTRAG_ZINSEN = BigInteger.ONE;
+        private static final BigInteger ANSPRUCHSNUMMER_HAUPTANTRAG = BigInteger.ONE;
+        private static final BigInteger ANSPRUCHSNUMMER_NEBENANTRAG_ZINSEN = BigInteger.TWO;
 
         private static final String ROLE_PLAINTIFF = "Kläger(in)";
         private static final String ROLE_CEDENT = "Zedent(in)";
@@ -28,7 +29,7 @@ public class FgrClaimGenerator {
         private static final String ZINSMETHODE = "jährlicher Zinssatz Über Basiszins";
         private static final String CODE_ZINSMETHODE_PATH = "codes/GDS.Zinsmethode_1.0.xml";
 
-        private final NachrichtKlaverKlageverfahren3500001 klage;
+        private final NachrichtKlaverKlageverfahren3500001.Inhaltsdaten inhaltsdaten;
         private final GrunddatenGenerator grunddatenGenerator;
         private final RoleNumberRegistry roleNumbers;
 
@@ -36,18 +37,17 @@ public class FgrClaimGenerator {
         private int rollennummerDefendant;
 
         public FgrClaimGenerator() {
-                this.klage = new NachrichtKlaverKlageverfahren3500001();
+                this.inhaltsdaten = new NachrichtKlaverKlageverfahren3500001.Inhaltsdaten();
                 this.grunddatenGenerator = new GrunddatenGenerator();
                 this.roleNumbers = new RoleNumberRegistry();
         }
 
         // ---------------------------------------------------------------------
-        // Antrag
+        // Claim
         // ---------------------------------------------------------------------
 
-        public NachrichtKlaverKlageverfahren3500001 createAntrag(UserData userData) {
+        public NachrichtKlaverKlageverfahren3500001.Inhaltsdaten createClaim(UserData userData) {
 
-                final var inhaltsdaten = new NachrichtKlaverKlageverfahren3500001.Inhaltsdaten();
                 final var antrag = new TypeKLAVERAntrag();
                 final var sachantraege = new TypeKLAVERAntrag.Sachantraege();
 
@@ -68,10 +68,18 @@ public class FgrClaimGenerator {
                 // TODO add if clause to only add if user provided data
                 antrag.setNebenantraegeZinsen(createNebenantragZinsen(userData));
 
-                inhaltsdaten.setAntraege(antrag);
-                klage.setInhaltsdaten(inhaltsdaten);
+                this.inhaltsdaten.setAntraege(antrag);
 
-                return klage;
+                var fgrBegruendetheit = new FgrBegruendetheit();
+                var refRollenNummerPlaintiff = new TypeGDSRefRollennummer();
+                refRollenNummerPlaintiff.setRefRollennummer(String.valueOf(rollennummerPlaintiff));
+                fgrBegruendetheit.createFgrBegruendetheit(userData, refRollenNummerPlaintiff);
+
+                var auswahl = new NachrichtKlaverKlageverfahren3500001.Inhaltsdaten.AuswahlBegruendetheit();
+                auswahl.setFluggastrechteAusgleichsansprueche(fgrBegruendetheit.getAusgleichsansprueche());
+                this.inhaltsdaten.setAuswahlBegruendetheit(auswahl);
+
+                return inhaltsdaten;
         }
 
         private TypeKLAVERAntrag.NebenantraegeZinsen createNebenantragZinsen(UserData userData) {

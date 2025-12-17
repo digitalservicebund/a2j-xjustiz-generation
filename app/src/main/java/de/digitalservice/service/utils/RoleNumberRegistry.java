@@ -4,7 +4,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class RoleNumberRegistry {
 
-    private final AtomicInteger nextRoleNumber = new AtomicInteger(0);
+    private final AtomicInteger nextRoleNumber = new AtomicInteger(1);
 
     public int next() {
         return nextRoleNumber.getAndIncrement();
