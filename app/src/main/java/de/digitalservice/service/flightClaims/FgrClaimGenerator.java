@@ -1,4 +1,4 @@
-package de.digitalservice.service.claims;
+package de.digitalservice.service.flightClaims;
 
 import java.math.BigInteger;
 import java.util.List;

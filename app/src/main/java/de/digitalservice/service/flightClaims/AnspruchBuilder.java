@@ -1,4 +1,4 @@
-package de.digitalservice.service.claims;
+package de.digitalservice.service.flightClaims;
 
 import static de.digitalservice.codes.CodeUtils.createCodeFromValue;
 

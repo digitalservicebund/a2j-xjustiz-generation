@@ -1,4 +1,4 @@
-# a2-xjustiz-generator
+# a2j-xjustiz-generator
 
 creates xjusitz messages out of a2j user data 
 
@@ -25,12 +25,30 @@ build the project to generate the Java classes based on xjustiz files in src/mai
 ./gradlew clean build
 ```
 
-## Running the application using Docker
+## Choose one of the following options to run the application: 
+
+### 1. Running the application locally 
+
+```bash
+./gradlew bootRun
+```
+
+### 2. Running the application locally using the built jar
+```
+./gradlew bootJar
+cd app
+java -jar build/libs/app.jar
+```
+
+
+### 3. Running the application using Docker
 ```
 cd app
 docker build -t fgr-claim-service .
 docker run -p 8080:8080 fgr-claim-service
 ```
+
+## Generate XJustiz files
 
 Now you can visit [Swagger UI](http://localhost:8080/swagger-ui/index.html#/Flight%20Claims/createClaim) to test the API and download a valid xjusitz message for flight right claims
 

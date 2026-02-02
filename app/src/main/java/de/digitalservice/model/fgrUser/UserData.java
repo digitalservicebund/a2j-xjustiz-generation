@@ -102,6 +102,5 @@ public class UserData {
     private Distance distance;
 
     // weitere Personen
-    private Boolean isWeiterePersonen;
     private List<WeiterePerson> weiterePersonen;
 }

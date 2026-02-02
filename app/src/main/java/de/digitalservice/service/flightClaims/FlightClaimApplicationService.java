@@ -1,9 +1,9 @@
-package de.digitalservice.service;
+package de.digitalservice.service.flightClaims;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import de.digitalservice.api.FlightClaimRequest;
 import de.digitalservice.model.fgrUser.UserData;
-import de.digitalservice.service.claims.FgrClaimGenerator;
+import de.digitalservice.service.NachrichtenkopfGenerator;
 import de.xjustiz.NachrichtKlaverKlageverfahren3500001;
 import jakarta.xml.bind.*;
 import org.springframework.stereotype.Service;

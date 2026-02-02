@@ -1,7 +1,7 @@
 package de.digitalservice.web;
 
 import de.digitalservice.api.FlightClaimRequest;
-import de.digitalservice.service.FlightClaimApplicationService;
+import de.digitalservice.service.flightClaims.FlightClaimApplicationService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 

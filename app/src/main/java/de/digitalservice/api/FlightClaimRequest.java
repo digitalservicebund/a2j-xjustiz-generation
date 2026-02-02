@@ -127,12 +127,9 @@ public class FlightClaimRequest {
         @Schema(description = "Name des Kontoinhabers", example = "Test-Test Müller")
         private String kontoinhaber;
 
-        // ===== Co-travellers =====
+        // ===== cedents =====
 
-        @Schema(description = "Ob weitere mitreisende Personen vorhanden sind", example = "yes")
-        private Boolean isWeiterePersonen;
-
-        @Schema(description = "Liste der weiteren mitreisenden Personen")
+        @Schema(description = "Liste der weiteren mitreisenden Personen, für die eine Abtretung vorliegt")
         private List<WeiterePerson> weiterePersonen;
 
         // ===== Airline address =====

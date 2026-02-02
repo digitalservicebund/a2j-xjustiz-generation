@@ -34,7 +34,6 @@
   "telefonnummer": "1010101010",
   "iban": "DE68500123456789000000",
   "kontoinhaber": "Test-Test Müller",
-  "isWeiterePersonen": "true",
   "weiterePersonen": [
     {
       "anrede": "frau",
