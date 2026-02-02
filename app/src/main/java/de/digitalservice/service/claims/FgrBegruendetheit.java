@@ -2,13 +2,11 @@ package de.digitalservice.service.claims;
 
 import static de.digitalservice.codes.CodeUtils.createCodeFromValue;
 
-import de.digitalservice.model.common.YesNoAnswer;
 import de.digitalservice.model.fgrUser.Bereich;
 import de.digitalservice.model.fgrUser.ErsatzverbindungArt;
 import de.digitalservice.model.fgrUser.UserData;
 import de.digitalservice.model.fgrUser.ZwischenstoppAnzahl;
 import de.digitalservice.service.utils.XmlDateConverter;
-import de.digitalservice.service.utils.YesNoAnswerToBooleanConverter;
 import de.xjustiz.CodeKLAVERAnspruchsartTyp3;
 import de.xjustiz.CodeKLAVERFGRAnspruchshoeheTyp3;
 import de.xjustiz.TypeGDSRefRollennummer;
@@ -154,8 +152,7 @@ public class FgrBegruendetheit {
         var verspaetung = new AuswahlLeistungsstoerung.Verspaetung();
         verspaetung.setBetroffenerFlug(betroffenerFlug);
         verspaetung.setAnkunft(createAnkunft(userData));
-        verspaetung.setAnschlussflugVerpasst(
-                YesNoAnswerToBooleanConverter.convert(userData.getAnschlussFlugVerpasst()));
+        verspaetung.setAnschlussflugVerpasst(userData.getAnschlussFlugVerpasst());
         // TODO: verspaetung can have Beweis
         return verspaetung;
     }
@@ -166,8 +163,7 @@ public class FgrBegruendetheit {
 
         var annullierung = new AuswahlLeistungsstoerung.Annullierung();
         annullierung.setBetroffenerFlug(betroffenerFlug);
-        annullierung.setAnschlussflugVerpasst(
-                YesNoAnswerToBooleanConverter.convert(userData.getAnschlussFlugVerpasst()));
+        annullierung.setAnschlussflugVerpasst(userData.getAnschlussFlugVerpasst());
         // TODO: add ersatzangebot
         return annullierung;
     }
@@ -178,7 +174,7 @@ public class FgrBegruendetheit {
         var befoerderungsart = new TypeKLAVERFGRBefoerderung.AuswahlBefoerderungsart();
         ankunft.setAuswahlBefoerderungsart(befoerderungsart);
 
-        if (userData.getTatsaechlicherFlug() == YesNoAnswer.NO) {
+        if (!userData.getTatsaechlicherFlug()) {
 
             if (userData.getErsatzverbindungArt() == ErsatzverbindungArt.FLIGHT) {
                 ankunft.getAuswahlBefoerderungsart().setFlugnummer(userData.getErsatzFlugnummer());

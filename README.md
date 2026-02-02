@@ -11,27 +11,26 @@ Generated files provide a Typesafe Interface to Marshal Java Objects to XML or U
 
 By Generating and applying a Schema to the Marshaller/Unmarshaller validation of the Schema can be enforced.
 
+## Get the Codes from XRepository
+The XSD schemata contain codes that are not part of the XJustiz standard, but which can be found in the XRepository (E.g. list with unique court id and the court name). 
+To retrieve the newest codes run 
+
+```
+sh app/xjustiz_codelists.sh
+```
+
 ## Generating Java Files
 build the project to generate the Java classes based on xjustiz files in src/main/resoruces/xjustiz/
 ```
 ./gradlew clean build
 ```
 
-## Get the Codes from XRepository
-The XSD schemata contain codes that are not part of the XJustiz standard, but which can be found in the XRepository (E.g. list with unique court id and the court name). 
-To retrieve the codes run 
-
+## Running the application using Docker
 ```
-sh app/xjustiz_codelists.sh
-```
-
-## Running the script
-Run the script without validating the example xml and print the output
-```
-./gradlew bootRun
+cd app
+docker build -t fgr-claim-service .
+docker run -p 8080:8080 fgr-claim-service
 ```
 
-Run the script to check if it is a valid xjusitz message
-```
-./gradlew bootRun --args='--validate'
-```
+Now you can visit [Swagger UI](http://localhost:8080/swagger-ui/index.html#/Flight%20Claims/createClaim) to test the API and download a valid xjusitz message for flight right claims
+

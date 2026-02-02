@@ -2,8 +2,8 @@
   "startAirport": "BER",
   "bereich": "verspaetet",
   "fluggesellschaft": "LH",
-  "prozesszinsen": "yes",
-  "versaeumnisurteil": "yes",
+  "prozesszinsen": "true",
+  "versaeumnisurteil": "true",
   "direktFlugnummer": "AB6303",
   "buchungsNummer": "AB6303",
   "direktAbflugsDatum": "10.10.2023",
@@ -17,7 +17,7 @@
   "direktAnkunftsDatum": "10.10.2023",
   "direktAnkunftsZeit": "10:00",
   "endAirport": "JFK",
-  "tatsaechlicherFlug": "no",
+  "tatsaechlicherFlug": "false",
   "ersatzverbindungArt": "flug",
   "ersatzFlugnummer": "AB6303",
   "ersatzFlugAnkunftsDatum": "10.02.2024",
@@ -34,7 +34,7 @@
   "telefonnummer": "1010101010",
   "iban": "DE68500123456789000000",
   "kontoinhaber": "Test-Test Müller",
-  "isWeiterePersonen": "yes",
+  "isWeiterePersonen": "true",
   "weiterePersonen": [
     {
       "anrede": "frau",

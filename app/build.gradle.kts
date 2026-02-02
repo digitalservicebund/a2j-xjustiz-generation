@@ -8,7 +8,7 @@
 plugins {
     application
     java
-    id("org.springframework.boot") version "3.5.7"
+    id("org.springframework.boot") version "4.0.2"
 	id("io.spring.dependency-management") version "1.1.7"
 }
 
@@ -16,10 +16,14 @@ repositories {
     mavenCentral()
 }
 
-dependencies {
-    implementation("org.springframework.boot:spring-boot-starter")
+dependencyManagement {
+    imports {
+        mavenBom("org.springdoc:springdoc-openapi-bom:3.0.1")
+    }
+}
 
-    implementation("com.fasterxml.jackson.core:jackson-databind:2.20.1")
+dependencies {
+
 
     // JAXB
     implementation("org.glassfish.jaxb:jaxb-runtime:4.0.6") // XML marshalling (runtime)
@@ -27,11 +31,16 @@ dependencies {
     exclude(group = "com.sun.xml.bind", module = "jaxb-core")
 }       
 
+    // Lombok
     compileOnly("org.projectlombok:lombok:1.18.42")
     annotationProcessor("org.projectlombok:lombok:1.18.42")
 
     testImplementation("org.junit.jupiter:junit-jupiter:5.11.0")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+
+    //webservices
+    implementation("org.springframework.boot:spring-boot-starter-web")    
+    implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui")
 }
 
 // Java toolchain
@@ -94,9 +103,14 @@ tasks.named("compileJava") {
     dependsOn(xjcGenerate)
 }
 
+tasks.bootJar {
+    archiveFileName.set("app.jar")
+}
 // JUnit configuration
 tasks.named<Test>("test") {
     useJUnitPlatform()
 }
+
+
 
 

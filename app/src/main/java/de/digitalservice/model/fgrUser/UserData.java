@@ -5,7 +5,6 @@ import java.util.List;
 
 import de.digitalservice.model.common.Anrede;
 import de.digitalservice.model.common.Title;
-import de.digitalservice.model.common.YesNoAnswer;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
@@ -24,7 +23,7 @@ public class UserData {
     private String endAirport;
 
     // --- Actual flight info ---
-    private YesNoAnswer tatsaechlicherFlug;
+    private Boolean tatsaechlicherFlug;
     private String tatsaechlicherAnkunftsDatum;
     private String tatsaechlicherAnkunftsZeit;
 
@@ -49,7 +48,7 @@ public class UserData {
     // --- Connection stops ---
     private ZwischenstoppAnzahl zwischenstoppAnzahl;
     private VerspaeteterFlug verspaeteterFlug;
-    private YesNoAnswer anschlussFlugVerpasst;
+    private Boolean anschlussFlugVerpasst;
 
     private String ersterZwischenstopp;
     private String zweiterZwischenstopp;
@@ -94,15 +93,15 @@ public class UserData {
     private String betroffenerFlugAnkunftFlughafen;
 
     // court procedure
-    private YesNoAnswer hasZeugen;
-    private YesNoAnswer versaeumnisurteil;
+    private Boolean hasZeugen;
+    private Boolean versaeumnisurteil;
     private Videoverhandlung videoverhandlung;
-    private YesNoAnswer prozesszinsen;
+    private Boolean prozesszinsen;
 
     // anspruchshoehe (non existing on fgrUser yet)
     private Distance distance;
 
     // weitere Personen
-    private YesNoAnswer isWeiterePersonen;
+    private Boolean isWeiterePersonen;
     private List<WeiterePerson> weiterePersonen;
 }
